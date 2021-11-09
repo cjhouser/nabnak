@@ -21,4 +21,8 @@ export class CardComponent implements OnInit {
     // send delete(this.id) to backend
     // remove card from view 
   }
+  
+  onEnter(enterEvent: any) {
+    this.title = enterEvent.target.value
+  }
 }

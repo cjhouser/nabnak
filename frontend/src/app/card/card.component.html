@@ -1,4 +1,2 @@
-<div>
-    <input type="text" [(ngModel)]="title">
-    <button (click)="onDelete()">Delete</button>
-</div>
+<input type="text" (keyup.enter)="onEnter($event)">
+<button (click)="onDelete()">Delete</button>
