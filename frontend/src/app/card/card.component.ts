@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
   id = '';
-  title = '';
+  title = 'default';
 
   constructor() {
     // id from backend
@@ -19,10 +19,13 @@ export class CardComponent implements OnInit {
 
   onDelete() {
     // send delete(this.id) to backend
-    // remove card from view 
+    // remove card
   }
   
-  onEnter(enterEvent: any) {
-    this.title = enterEvent.target.value
+  onEnter(event: any) {
+    // Blue the input box on enter release
+    event.target.blur();
+    this.title = event.target.value;
+    //send a request to the backend
   }
 }

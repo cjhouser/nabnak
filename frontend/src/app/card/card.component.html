@@ -1,2 +1,4 @@
-<input type="text" (keyup.enter)="onEnter($event)">
-<button (click)="onDelete()">Delete</button>
+<div class="container card">
+    <button class="btn-close" (click)="onDelete()"></button>
+    <input type="text" (keyup.enter)="onEnter($event)" value="{{title}}">
+</div>
