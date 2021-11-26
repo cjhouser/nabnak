@@ -5,6 +5,7 @@ export class Task implements Deserializable {
     public title: string;
 
     constructor() {
+        this.id = Math.floor(Math.random() * 10000);
         this.title = 'New Task';
     }
 

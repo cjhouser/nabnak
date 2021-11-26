@@ -1,0 +1,7 @@
+<div class="card bg-primary">
+    <button class="btn-close" (click)="deleteStage()"></button>
+    <input type="text" (keyup.enter)="updateStage($event)" value="{{stage.title}}">
+    <app-card (taskDeleted)="onTaskDeleted($event)" *ngFor="let task of stage.tasks" [task]="task"></app-card>
+    <button (click)="createTask()">New Card</button>
+</div>
+

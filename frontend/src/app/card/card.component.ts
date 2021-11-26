@@ -1,31 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Task } from '../models/task.model';
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
-export class CardComponent implements OnInit {
-  id = '';
-  title = 'default';
+export class CardComponent {
+  @Input() task!: Task;
+  @Output() taskDeleted = new EventEmitter<Task>();
 
-  constructor() {
-    // id from backend
-    // title from backend
-  }
-
-  ngOnInit(): void {
-  }
-
-  onDelete() {
-    // send delete(this.id) to backend
-    // remove card
+  delete() {
+    console.log(this.task.id, this.task.title);
+    this.taskDeleted.emit(this.task);
   }
   
-  onEnter(event: any) {
-    // Blue the input box on enter release
+  update(event: any) {
+    console.log("update task");
+    this.task.title = event.target.value;
     event.target.blur();
-    this.title = event.target.value;
-    //send a request to the backend
   }
 }

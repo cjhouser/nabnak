@@ -1,4 +1,4 @@
-<div class="container card">
-    <button class="btn-close" (click)="onDelete()"></button>
-    <input type="text" (keyup.enter)="onEnter($event)" value="{{title}}">
+<div class="card bg-danger">
+    <button class="btn-close" (click)="delete()"></button>
+    <input type="text" (keyup.enter)="update($event)" value="{{task.title}}">
 </div>
